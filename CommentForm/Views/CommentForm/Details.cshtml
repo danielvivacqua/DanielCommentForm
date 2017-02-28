@@ -1,0 +1,70 @@
+﻿@model CommentForm.Models.CommentFormViewModel
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CommentFormModel</h4>
+    <hr />
+    @*Daniel: we need to modify this section to model.Name to model.CommentForm.Name to be more specific *@
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentForm.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentForm.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentForm.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentForm.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentForm.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentForm.Priority)
+        </dd>
+
+    </dl>
+    <hr />
+
+    @*Daniel: this whole section was added to show the procedure we found*@
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Procedure.Priority)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Procedure.Priority)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Procedure.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Procedure.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Procedure.Details)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Procedure.Details)
+        </dd>
+    </dl>
+
+</div>
+<p>
+    @*We also need to modify Model.CommentForm.ID. Model.ID is no longer specific enough since our model is a viewmodel  *@
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CommentForm.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
